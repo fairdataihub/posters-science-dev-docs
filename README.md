@@ -10,7 +10,7 @@ Developer documentation for the Posters.science platform - a free, open-source s
 Posters.science is developed by the [FAIR Data Innovations Hub](https://fairdataihub.org/) to provide a comprehensive platform for scientific poster management. The platform focuses on:
 
 - **FAIR Compliance**: Ensuring findability, accessibility, interoperability, and reusability
-- **Open Source**: Free and accessible to the scientific community  
+- **Open Source**: Free and accessible to the scientific community
 - **AI-Ready**: Structured metadata for enhanced discovery
 - **Repository Integration**: Works with established repositories like Zenodo and Figshare
 
@@ -76,7 +76,7 @@ We welcome contributions! Please see our [main repository](https://github.com/fa
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ## Links
 

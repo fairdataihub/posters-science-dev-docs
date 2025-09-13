@@ -17,6 +17,11 @@ export default withMermaid(
       ],
     ],
 
+    ignoreDeadLinks: [
+      // ignore exact url "/LICENSE"
+      "/LICENSE",
+    ],
+
     themeConfig: {
       // https://vitepress.dev/reference/default-theme-config
       nav: [
