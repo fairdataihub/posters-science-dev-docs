@@ -1,0 +1,39 @@
+{
+  "name": "posters-science-dev-docs",
+  "version": "0.0.1",
+  "description": "Posters.science Developer Documentation",
+  "author": "FAIR Data Innovations Hub <info@fairdataihub.org>",
+  "license": "MIT",
+  "homepage": "https://posters.science",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fairdataihub/posters-science-dev-docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fairdataihub/posters-science-dev-docs/issues"
+  },
+  "keywords": [
+    "posters",
+    "science",
+    "developer",
+    "documentation"
+  ],
+  "scripts": {
+    "dev": "vitepress dev --port 3000",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "mermaid": "^11.11.0",
+    "prettier": "^3.6.2",
+    "vite": "^7.1.5",
+    "vitepress": "^1.6.4",
+    "vitepress-plugin-mermaid": "^2.0.17",
+    "vue": "^3.5.21"
+  },
+  "volta": {
+    "node": "22.18.0",
+    "yarn": "1.22.22"
+  }
+}

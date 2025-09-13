@@ -1,0 +1,9 @@
+node_modules
+.temp
+.cache
+node_modules
+.temp
+.cache
+yarn-error.log
+.vitepress/cache
+.vitepress/dist/
