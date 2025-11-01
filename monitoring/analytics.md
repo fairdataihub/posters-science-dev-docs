@@ -27,6 +27,8 @@ graph TD
 ### Platform Usage
 
 - **Search Queries**: Search behavior analysis
+- **Smart Search Usage**: LLM-powered natural language queries
+- **Metadata Corrections**: User-driven metadata improvements
 - **Poster Views**: Content access patterns
 - **Submission Activity**: User contribution metrics
 - **Feature Usage**: Platform feature adoption

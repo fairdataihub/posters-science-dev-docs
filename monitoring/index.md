@@ -4,11 +4,11 @@ The Posters.science platform implements a comprehensive monitoring and observabi
 
 ## Key Components
 
-- [**Application Monitoring**](./application.md): Real-time performance and health tracking
+- **Application Monitoring**: Real-time performance and health tracking
 - **Logging**: Centralized log management and analysis
-- [**Error Tracking**](./errors.md): Comprehensive error monitoring and alerting
-- [**User Analytics**](./analytics.md): Privacy-friendly usage analytics
-- [**Data Backups**](./backups.md): Automated backup and recovery systems
+- **Error Tracking**: Comprehensive error monitoring and alerting
+- **User Analytics**: Privacy-friendly usage analytics
+- **Data Backups**: Automated backup and recovery systems
 - **Email Services**: Transactional email monitoring
 
 ## Monitoring Architecture
@@ -34,6 +34,49 @@ graph TD
     N --> O[Delivery Monitoring]
 ```
 
+## Application Monitoring
+
+Prometheus or server-native monitoring tracks backend health:
+- API latency
+- Search indexing
+- LLM performance
+- Job completion
+
+Alerts route via email or Slack. Synthetic monitoring tests end-to-end workflows.
+
+## Logging
+
+Grafana Loki (or Azure Log Analytics) centralizes logs including:
+- Request traces
+- Job results
+- Errors
+
+## Error Tracking
+
+Sentry monitors real-time errors across Nuxt frontend and server-side APIs, capturing exceptions and broken flows.
+
+## User Analytics
+
+Umami tracks anonymous usage metrics:
+- Searches
+- Metadata corrections
+- LLM queries
+
+## Data Backups
+
+Nightly Postgres backups export to Cloudflare R2 storage, covering:
+- Metadata
+- poster.json versions
+- Sessions
+- Embeddings
+
+## Email Services
+
+Resend handles transactional emails:
+- Verification
+- Password resets
+- DOI confirmations
+
 ## Implementation Strategy
 
 ### Tool Selection Criteria
@@ -42,3 +85,7 @@ graph TD
 - **Integration**: Seamless integration with existing stack
 - **Scalability**: Growth-ready monitoring infrastructure
 - **Privacy**: User privacy protection and compliance
+
+### Incremental Rollout
+
+Tools will be introduced incrementally based on deployment scale, starting with health checks and Sentry integration.

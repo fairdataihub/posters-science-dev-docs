@@ -31,11 +31,36 @@ In the second step, the user will upload the PDF file of their poster through a 
 
 ## Step 3: Review and Provide Metadata
 
-At the third step, the user will wait while the platform automatically extracts metadata from their PDF file(s). Once completed, the user will be presented with an editable form of conveniently organized metadata through multiple sections. Metadata that was automatically extracted will be prefilled in the form. The user will be able to review and edit prefilled metadata as well as add additional metadata.
+At the third step, the user will wait while the platform automatically extracts metadata from their PDF file(s). Once completed, the user will be presented with an editable form of conveniently organized metadata through multiple sections. Metadata that was automatically extracted will be prefilled in the form.
+
+### Confidence Indicators
+
+Each extracted field receives a confidence score (0-100%) based on:
+- Format compliance
+- Database validation
+- Context analysis
+
+Fields below 70% confidence are flagged for user review. The user will be able to review and edit prefilled metadata as well as add additional metadata.
+
+### Generated Output
+
+The platform generates a **poster.json** file following the Posters.science JSON Schema (based on DataCite with poster-specific extensions). This file contains all structured metadata and ensures FAIR compliance. Versioning is tracked in PostgreSQL for all metadata changes.
 
 ## Step 4: Sharing Poster
 
 On the fourth step, the user will be able to share their poster package on a repository or download it locally on their computer.
+
+### Repository Options
+
+Users can choose to publish their poster to:
+- **Zenodo** - Open research repository
+- **Figshare** - Research data repository
+
+Posters are published via repository APIs, and a DOI (Digital Object Identifier) is returned to the user upon successful publication. The DOI and repository information are stored in the database and indexed in the search system.
+
+### Local Download
+
+Alternatively, users can download the complete poster package (PDF and poster.json file) locally for manual repository submission or archival purposes.
 
 ## AI-Powered Metadata Extraction
 
@@ -44,3 +69,13 @@ Posters.science uses Large Language Models (LLMs) to automatically extract key d
 ## Standards-Based Metadata
 
 Posters.science follows the standard DataCite schema to structure metadata. This ensures that posters are not only FAIR (Findable, Accessible, Interoperable, and Reusable) but also easier to find, index, and reuse.
+
+### Poster Schema
+
+The Posters.science JSON Schema extends DataCite with poster-specific fields including:
+- **Conference information** - Name, location, dates, and identifiers
+- **Ethics approvals** - IRB protocols and certifications
+- **Domain classification** - Research area categorization
+- **Content structure** - Text blocks, figure and table captions
+
+The complete schema is available at: [https://github.com/fairdataihub/posters-science-json-schema](https://github.com/fairdataihub/posters-science-json-schema)

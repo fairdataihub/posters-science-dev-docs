@@ -14,6 +14,7 @@ The search bar and filtering features are very standard. The user will be able t
 
 The following filtering options will be available:
 
+- **Author**
 - **Publication date** (range)
 - **Conference**
 - **Affiliation**

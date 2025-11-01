@@ -72,6 +72,13 @@ app.use((req, res, next) => {
 - **Search Service**: Meilisearch availability
 - **Cache Service**: Redis connectivity
 
+### Synthetic Monitoring
+
+- **End-to-End Testing**: Automated workflow validation
+- **User Journey Simulation**: Critical path monitoring
+- **Uptime Monitoring**: Service availability checks
+- **Performance Testing**: Real-world scenario testing
+
 ### Custom Dashboards
 
 - **System Overview**: High-level platform metrics
