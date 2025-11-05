@@ -35,7 +35,7 @@ The core of Posters.science is a **Nuxt 3** application, a meta-framework built 
 ### External Integrations
 
 - **Repository APIs**: Zenodo, Figshare for poster hosting
-- **Authentication**: Nuxt Auth for user management across services
+- **Authentication**: Nuxt Auth with ORCID integration for user management across services
 - **Email Services**: Resend for transactional communications
 
 ## Microservices Architecture

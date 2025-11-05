@@ -25,6 +25,7 @@ graph TD
 ### Database Backups
 
 - **Full Backups**: Complete database snapshots
+- **Covered Data**: Metadata, poster.json versions, user sessions, and embeddings
 
 ### Search Index Backups
 

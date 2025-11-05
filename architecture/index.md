@@ -16,12 +16,27 @@ Beyond serving immediate projects, the platform aims to become a one-stop hub fo
 - **AI-Ready**: Structured metadata enables AI-powered discovery
 - **User-Friendly**: Intuitive interfaces for both submission and discovery
 
-## Architecture Components
+## Overall Architecture
 
-The platform consists of several key components:
+The core of Posters.science is a Nuxt 3 application built on Vue 3, enabling a unified web application for both user interface and backend API requests. The entire stack is developed in TypeScript for type safety and early bug detection. Nuxt 3 supports server-side rendering (SSR), which improves security, performance, and search engine indexing.
 
-1. **[Overall Architecture](./overall.md)** - Core system design and technology choices
-2. **[Technology Stack](./tech-stack.md)** - Detailed breakdown of technologies used
+Unlike traditional repositories, Posters.science does not host poster files. Instead, posters remain in established repositories like Zenodo and Figshare. The platform indexes these posters, enriches them with structured metadata, and makes them discoverable.
+
+### Technology Stack
+
+The architecture uses:
+
+* **PostgreSQL** database for poster metadata, user information, and system state  
+* **Meilisearch** for fast, scalable full-text search  
+* **Redis** for caching and session management  
+* **Prisma ORM** for typesafe database interactions  
+* **Nuxt Auth** for ORCID-based authentication  
+* **Locally hosted GPU machines** for LLM-based extraction and Smart Search  
+* **Python-based web scraping service** for repositories without APIs
+
+### Deployment
+
+Deployment is handled with Kamal on a single Linux server, with GitHub Actions managing automated deployments. Docker Compose defines all services. Documentation is maintained with Vitepress.
 
 ## Repository Integration
 

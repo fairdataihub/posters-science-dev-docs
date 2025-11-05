@@ -30,20 +30,21 @@ The Posters.science platform is built using modern, scalable technologies that e
 
 ### AI & Machine Learning
 
-- **Local GPU Compute**: On-premises AI processing
+- **Local GPU Compute**: On-premises AI processing (dual NVIDIA RTX 3090 GPUs)
+- **vLLM**: Optimized LLM inference engine with 4-bit quantization
 - **Retrieval-Augmented Generation (RAG)**: Context-aware AI responses
 - **Natural Language Processing**: Query understanding and poster summarization
 
 ### Communication
 
 - **Resend**: Transactional email delivery
-- **Nuxt Auth**: User authentication and session management
+- **Nuxt Auth**: User authentication and session management with ORCID integration
 
 ## Infrastructure
 
 ### Web Scraping
 
-- **Python**: Scraping tools for repository data collection
+- **Python 3.10+**: Scraping tools for repository data collection
 - **Dedicated VM**: Isolated scraping environment
 - **Automated Pipelines**: Scheduled metadata extraction
 
