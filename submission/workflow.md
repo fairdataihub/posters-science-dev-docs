@@ -29,6 +29,46 @@ The first step is to log in to the user's account. Login is required to enforce 
 
 In the second step, the user will upload the PDF file of their poster through a drag-and-drop interface or through a file navigation option. They will also be able to optionally upload a PDF file containing the abstract of their poster.
 
+### Accepted File Formats
+
+Posters.science accepts the following file formats for poster uploads:
+
+#### Primary Formats (Recommended)
+
+| Format | Extension | Notes |
+|--------|-----------|-------|
+| **PDF** | `.pdf` | Most common poster format. Must be single-page. |
+| **PNG** | `.png` | Lossless image format. |
+| **JPEG** | `.jpg`, `.jpeg` | Widely used image format. |
+| **TIFF** | `.tiff`, `.tif` | High-quality, print-ready. |
+| **PowerPoint** | `.pptx` | Must be single-slide. |
+| **SVG** | `.svg` | Vector format from Figma/Illustrator. |
+
+#### Additional Supported Formats
+
+| Format | Extension | Notes |
+|--------|-----------|-------|
+| PowerPoint Legacy | `.ppt` | Older PowerPoint format. |
+| OpenDocument | `.odp` | LibreOffice/OpenOffice presentations. |
+| Keynote | `.key` | Apple Keynote (macOS). |
+| EPS | `.eps` | Encapsulated PostScript vector. |
+| WebP | `.webp` | Modern web image format. |
+| GIF | `.gif` | Limited colors, rare for posters. |
+| BMP | `.bmp` | Uncompressed bitmap. |
+| HEIF | `.heic`, `.heif` | Apple high-efficiency format. |
+
+#### Page/Slide Requirements
+
+For multi-page formats (PDF, PPTX, PPT, ODP, KEY), only **single-page/single-slide documents** are accepted as valid posters. Multi-page documents are automatically flagged for review.
+
+#### Design Tool Exports
+
+If you created your poster in design software like Figma, Adobe Illustrator, or Canva, we recommend exporting as:
+
+1. **PDF** (preferred) - maintains quality and is widely compatible
+2. **SVG** - preserves vector quality
+3. **PNG** - high-resolution raster fallback
+
 ## Step 3: Review and Provide Metadata
 
 At the third step, the user will wait while the platform automatically extracts metadata from their PDF file(s). Once completed, the user will be presented with an editable form of conveniently organized metadata through multiple sections. Metadata that was automatically extracted will be prefilled in the form.
