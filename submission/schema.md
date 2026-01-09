@@ -5,7 +5,7 @@ The Posters.science JSON Schema (v0.1) was developed with the University of Cali
 ## Schema Repository
 
 The complete schema specification is available on GitHub:
-**[https://github.com/fairdataihub/posters-science-json-schema](https://github.com/fairdataihub/posters-science-json-schema)**
+**[https://github.com/fairdataihub/poster-json-schema](https://github.com/fairdataihub/poster-json-schema)**
 
 ## Design Principles
 

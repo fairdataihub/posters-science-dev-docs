@@ -118,4 +118,4 @@ The Posters.science JSON Schema extends DataCite with poster-specific fields inc
 - **Domain classification** - Research area categorization
 - **Content structure** - Text blocks, figure and table captions
 
-The complete schema is available at: [https://github.com/fairdataihub/posters-science-json-schema](https://github.com/fairdataihub/posters-science-json-schema)
+The complete schema is available at: [https://github.com/fairdataihub/poster-json-schema](https://github.com/fairdataihub/poster-json-schema)
