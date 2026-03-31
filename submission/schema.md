@@ -1,6 +1,8 @@
 # Poster Schema
 
-The Posters.science JSON Schema (v0.1) was developed with the University of California Curation Center (UC3). The schema balances adherence to DataCite standards with unique poster metadata needs.
+The Posters.science JSON Schema was developed with the University of California Curation Center (UC3). The schema balances adherence to DataCite standards with unique poster metadata needs.
+
+**Current version:** [v0.2](https://posters.science/schema/v0.2/poster_schema.json) (DataCite 4.7) | **Previous:** [v0.1](https://posters.science/schema/v0.1/poster_schema.json) (DataCite 4.6)
 
 ## Schema Repository
 
@@ -53,21 +55,21 @@ Primary research area categorization:
 - Subject area tagging
 - Discipline identification
 
-### Poster Content
+### Content
 
-The **posterContent** object stores extracted poster text with a flexible structure:
-- **posterTitle**: The main title text as it appears on the poster itself (may differ from metadata title)
+The **content** object stores extracted text with a flexible structure:
 - **sections**: Array of content sections, where each section contains:
   - **sectionTitle**: The heading of the section (e.g., "Introduction", "Methods", "Results", "Discussion", "Conclusions")
   - **sectionContent**: The text content of that section
+- **unstructuredContent**: Optional fallback for content that cannot be organized into clear sections
 
 This flexible structure accommodates unstructured poster layouts without forcing content into rigid predefined sections.
 
 ### Image and Table Captions
 
 Separate arrays for visual element descriptions:
-- **imageCaption**: Array of objects with multi-line image caption support (caption1, caption2, etc.)
-- **tableCaption**: Array of objects with multi-line table caption support (caption1, caption2, etc.)
+- **imageCaptions**: Array of objects with caption text and optional ID for cross-referencing
+- **tableCaptions**: Array of objects with caption text and optional ID for cross-referencing
 
 ## Identifiers
 
@@ -81,7 +83,7 @@ DOIs are added to the identifiers array when posters are deposited to repositori
 
 ### Resource Type
 
-Resource types default to "Other" since DataCite does not include "Poster" as a specific option in its controlled vocabulary.
+As of schema v0.2 (DataCite 4.7), resource types default to "Poster" — a new controlled vocabulary value added in DataCite 4.7 alongside "Presentation". In v0.1, the default was "Other" since DataCite 4.6 did not include "Poster" as a specific option.
 
 ## Repository Mapping
 
@@ -100,6 +102,14 @@ For fields without direct equivalents in repository schemas:
 - Domain classification
 
 The complete **poster.json** file is included as a supplementary file in the repository deposit, ensuring no metadata is lost.
+
+## What's New in v0.2 (DataCite 4.7)
+
+- **"Poster" and "Presentation"** added to `resourceTypeGeneral` controlled list — posters no longer need to use "Other"
+- **Default `resourceTypeGeneral`** changed from "Other" to "Poster"
+- **"RAiD" and "SWHID"** added to `relatedIdentifierType` controlled list
+- **"Other" relationType** added with new `relationTypeInformation` sub-property for describing custom relationships
+- **`relationTypeInformation`** sub-property added to `relatedIdentifiers` items
 
 ## Schema Versioning
 
