@@ -87,12 +87,15 @@ As of schema v0.2 (DataCite 4.7), resource types default to "Poster" — a new c
 
 ## Repository Mapping
 
-### Direct Mapping
+The internal **Poster.json Field Coverage** Google Sheet (in the project Google Drive) is the canonical reference for:
+- Which poster schema fields are extracted, auto-assigned, or not populated
+- Whether each field is user-reviewed in the UI
+- How each field maps to Zenodo deposit metadata
 
-Most Posters.science fields map directly to Zenodo and Figshare fields, or with minor transformations:
-- Authors → Creators
-- Conference → Related Identifiers
-- Funding → Funding References
+For the public-facing version of this information, see [docs.posters.science](https://docs.posters.science):
+- [The Poster Schema](https://docs.posters.science/docs/schema) for field coverage and date types
+- [Zenodo Deposit Details](https://docs.posters.science/docs/zenodo-mapping) for the Zenodo mapping summary
+- The [crosswalk in poster-json-schema](https://github.com/fairdataihub/poster-json-schema/blob/main/crosswalk/zenodo.md) for the detailed technical field-by-field mapping
 
 ### Supplementary File Strategy
 
