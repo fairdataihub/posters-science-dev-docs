@@ -6,11 +6,11 @@ The Posters.science platform uses advanced AI-powered processing to automaticall
 
 ### Large Language Model
 
-The extraction tool uses **Llama 3.3 70B** for structured information extraction from poster PDFs. The model is deployed on dual **NVIDIA RTX 3090 GPUs** using 4-bit quantization with **vLLM** for optimized inference. The 8,192-token context window allows processing substantial content, targeting **under 60 seconds per poster**.
+The extraction tool uses [**Llama 3.1 8B**](https://huggingface.co/fairdataihub/Llama-3.1-8B-Poster-Extraction) for structured information extraction from poster PDFs. The model is deployed on local GPU hardware using 4-bit quantization for optimized inference, targeting **under 60 seconds per poster**.
 
 ### Model Performance
 
-Through systematic evaluation on 200 posters from Zenodo and Figshare, Llama 3.3 70B significantly outperformed traditional NLP methods (Grobid) across all fields.
+Through systematic evaluation on 200 posters from Zenodo and Figshare, Llama 3.1 8B significantly outperformed traditional NLP methods (Grobid) across all fields.
 
 ### Extraction Strategy
 

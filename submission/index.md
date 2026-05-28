@@ -37,7 +37,7 @@ The extraction tool uses Large Language Models to extract structured information
 
 ### Model Performance
 
-Through systematic evaluation on 200 posters from Zenodo and Figshare, Llama 3.3 70B significantly outperformed traditional NLP methods (Grobid) across all fields. The model is deployed on dual NVIDIA RTX 3090 GPUs using 4-bit quantization with vLLM for optimized inference. The 8,192-token context window allows processing substantial content, targeting under 60 seconds per poster.
+Through systematic evaluation on 200 posters from Zenodo and Figshare, Llama 3.1 8B significantly outperformed traditional NLP methods (Grobid) across all fields. The model is deployed on local GPU hardware using 4-bit quantization for optimized inference, targeting under 60 seconds per poster.
 
 ### Extraction Strategy
 

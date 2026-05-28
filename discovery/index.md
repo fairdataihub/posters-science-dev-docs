@@ -56,7 +56,7 @@ Query processing includes:
 
 ### Response Generation
 
-Response generation uses Llama 3.3 70B (4-bit quantization, vLLM deployment) with an 8,192-token context window. The prompt provides context from five retrieved posters and instructs the LLM to synthesize information, cite sources, and respond in under 300 words.
+Response generation uses Llama 3.1 8B (4-bit quantization) with the prompt providing context from five retrieved posters, instructing the LLM to synthesize information, cite sources, and respond in under 300 words.
 
 ### Performance Targets
 
