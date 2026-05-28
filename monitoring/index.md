@@ -1,70 +1,26 @@
 # Monitoring & Observability
 
-The Posters.science platform implements a comprehensive monitoring and observability stack to ensure system health, performance, and security. This section covers the monitoring infrastructure, tools, and practices used to maintain platform reliability.
+The Posters.science platform uses a mix of deployed and planned monitoring tools to ensure system health, performance, and security.
 
-## Key Components
+::: info Partially Planned
+Some components below (backups, email) are deployed. Application monitoring, logging, analytics, and error tracking tooling are under active development.
+:::
 
-- **Application Monitoring**: Real-time performance and health tracking
-- **Logging**: Centralized log management and analysis
-- **Error Tracking**: Comprehensive error monitoring and alerting
-- **User Analytics**: Privacy-friendly usage analytics
-- **Data Backups**: Automated backup and recovery systems
-- **Email Services**: Transactional email monitoring
+## Current Components
 
-## Monitoring Architecture
+- **Data Backups**: Nightly PostgreSQL backups to Cloudflare R2
+- **Email Services**: Resend for transactional emails (verification, DOI confirmations)
 
-### System Overview
+## Planned Components
 
-```mermaid
-graph TD
-    A[Application] --> B[Prometheus]
-    A --> C[Grafana Loki]
-    A --> D[Sentry]
-    A --> E[Umami]
-
-    B --> F[Alerting]
-    C --> G[Log Analysis]
-    D --> H[Error Tracking]
-    E --> I[Analytics Dashboard]
-
-    J[PostgreSQL] --> K[Backup System]
-    K --> L[Cloudflare R2]
-
-    M[Email Service] --> N[Resend]
-    N --> O[Delivery Monitoring]
-```
-
-## Application Monitoring
-
-Prometheus or server-native monitoring tracks backend health:
-- API latency
-- Search indexing
-- LLM performance
-- Job completion
-
-Alerts route via email or Slack. Synthetic monitoring tests end-to-end workflows.
-
-## Logging
-
-Grafana Loki (or Azure Log Analytics) centralizes logs including:
-- Request traces
-- Job results
-- Errors
-
-## Error Tracking
-
-Sentry monitors real-time errors across Nuxt frontend and server-side APIs, capturing exceptions and broken flows.
-
-## User Analytics
-
-Umami tracks anonymous usage metrics:
-- Searches
-- Metadata corrections
-- LLM queries
+- **Application Monitoring**: Prometheus + Grafana for performance and health tracking
+- **Logging**: Centralized log management
+- **Error Tracking**: Sentry for real-time error monitoring
+- **User Analytics**: Umami for privacy-friendly usage analytics
 
 ## Data Backups
 
-Nightly Postgres backups export to Cloudflare R2 storage, covering:
+Nightly PostgreSQL backups export to Cloudflare R2 storage, covering:
 - Metadata
 - poster.json versions
 - Sessions
@@ -79,13 +35,4 @@ Resend handles transactional emails:
 
 ## Implementation Strategy
 
-### Tool Selection Criteria
-
-- **Open Source**: Cost-effective and customizable solutions
-- **Integration**: Seamless integration with existing stack
-- **Scalability**: Growth-ready monitoring infrastructure
-- **Privacy**: User privacy protection and compliance
-
-### Incremental Rollout
-
-Tools will be introduced incrementally based on deployment scale, starting with health checks and Sentry integration.
+Tools will be introduced incrementally based on deployment scale, starting with health checks and Sentry integration. All selected tools are open source and privacy-focused.

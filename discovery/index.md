@@ -15,87 +15,46 @@ The discovery portal allows searching through publicly shared posters. Meilisear
 - **Sorting Options**: Relevance, date, title, author
 - **Search Suggestions**: Auto-complete and query suggestions
 
-### AI-Enhanced Discovery
+### AI-Enhanced Discovery (Planned)
+
+::: info Coming Soon
+Smart Search and AI-enhanced discovery features are under active development and not yet available.
+:::
 
 - **Natural Language Queries**: Conversational search interface
 - **Contextual Understanding**: Semantic search capabilities
 - **Related Content**: AI-powered recommendations
 
-## Smart Search Implementation
+## Smart Search (Planned)
 
-Smart Search enables natural language questions with AI-generated summaries and links to relevant posters. The Retrieval Augmented Generation (RAG) pipeline:
+Smart Search will enable natural language questions with AI-generated summaries and links to relevant posters. The planned Retrieval Augmented Generation (RAG) pipeline:
 
 1. Embeds user queries
 2. Performs vector similarity search against pre-computed poster embeddings in the database
-3. Retrieves the top 5 posters
+3. Retrieves the top relevant posters
 4. Passes them as context to an LLM for response generation
 
-### Embedding Model
+### Planned Architecture
 
-The bge-large-en-v1.5 embedding model (Apache 2.0 license) generates 1024-dimensional embeddings from up to 512 tokens. Each poster is embedded by combining title, authors, conference, abstract, keywords, and content.
+- **Vector storage**: pgvector (PostgreSQL extension) with HNSW indexing for fast approximate nearest-neighbor search
+- **Search integration**: Meilisearch for hybrid keyword + vector retrieval
+- **Response generation**: LLM model selection in progress
 
-The 512-token limit is addressed through weighted averaging:
-- Title: 25%
-- Abstract: 35%
-- Keywords: 20%
-- Content: 15%
-- Metadata: 5%
+## Overview Page Analytics (Planned)
 
-Separate embeddings are combined into a weighted average.
+::: info Planned
+The Overview page and its visualizations are under active development.
+:::
 
-### Vector Storage
-
-Pgvector (PostgreSQL extension) stores embeddings directly in the database. The *poster_embeddings* table uses an IVFFlat index optimized for cosine similarity, configured with 100 lists for ~50,000 posters (10-50ms query performance).
-
-### Query Processing
-
-Query processing includes:
-- Named entity recognition for conferences/years
-- Medical term expansion with synonyms
-- Embedding for vector similarity search
-
-### Response Generation
-
-Response generation uses Llama 3.1 8B (4-bit quantization) with the prompt providing context from five retrieved posters, instructing the LLM to synthesize information, cite sources, and respond in under 300 words.
-
-### Performance Targets
-
-**Evaluation targets:**
-- Precision@5 ≥80%
-- Recall@5 ≥60%
-- SciBERT similarity ≥0.70
-- Human evaluation ≥4.0/5.0
-- Hallucination rate <5%
-- Total latency <3 seconds
-
-Redis caches identical queries for 24 hours. Poster embeddings are pre-computed nightly.
-
-## Overview Page Analytics
-
-The Overview page provides visualizations of database trends and patterns:
+The Overview page will provide visualizations of database trends and patterns:
 
 - **Poster Growth Over Time**: time-series chart of monthly registrations  
-- **Top Institutions**: bar chart of 20 institutions with most posters  
+- **Top Institutions**: bar chart of institutions with the most posters  
 - **Research Domain Distribution**: treemap showing poster distribution across fields  
-- **Conference Landscape**: network graph mapping conference ecosystem  
+- **Conference Landscape**: network graph mapping the conference ecosystem  
 - **Funding Landscape**: Sankey diagram showing funder-to-domain flows  
 - **Geographic Distribution**: world map with choropleth coloring  
 - **Collaboration Network**: force-directed graph of inter-institutional collaborations
-
-### Technical Implementation
-
-Visualizations use Apache ECharts or D3.js in Vue 3 components. Data is served via API endpoints querying PostgreSQL materialized views (refreshed nightly, cached in Redis for 24 hours). 
-
-The dashboard includes:
-- Interactive filtering
-- Drill-down capabilities
-- Export options (PNG, SVG, CSV)
-
-### Accessibility Features
-
-- High contrast mode
-- Keyboard navigation
-- Screen reader support
 
 ## Technical Implementation
 

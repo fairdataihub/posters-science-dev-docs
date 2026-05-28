@@ -10,7 +10,7 @@ The extraction tool uses [**Llama 3.1 8B**](https://huggingface.co/fairdataihub/
 
 ### Model Performance
 
-Through systematic evaluation on 200 posters from Zenodo and Figshare, Llama 3.1 8B significantly outperformed traditional NLP methods (Grobid) across all fields.
+Through systematic evaluation on 400 posters from Zenodo and Figshare, Llama 3.1 8B significantly outperformed traditional NLP methods (Grobid) across all fields.
 
 ### Extraction Strategy
 

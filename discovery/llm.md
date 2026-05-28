@@ -1,10 +1,14 @@
-# LLM Search Integration
+# LLM Search Integration (Planned)
 
-The Posters.science platform integrates Large Language Models (LLMs) to provide advanced AI-powered discovery capabilities, enabling users to find relevant scientific posters through natural language queries and intelligent content analysis.
+::: info Coming Soon
+Smart Search is under active development and not yet available. This page describes the planned feature design.
+:::
+
+The Posters.science platform will integrate Large Language Models (LLMs) to provide AI-powered discovery capabilities, enabling users to find relevant scientific posters through natural language queries.
 
 ## Smart Search Feature
 
-Upon clicking on the "Smart Search" button, users will be taken to the Smart Search feature's page. On this page, they will be able to ask specific questions, e.g., "What new discoveries were presented at ARVO 2025 regarding the connection between the eye and Alzheimer's disease?". The Smart Search feature runs a query through the Posters.science database to generate an answer and provide a list of the top 5 most relevant posters.
+Users will be able to click a "Smart Search" button and ask specific questions, e.g., "What new discoveries were presented at ARVO 2025 regarding the connection between the eye and Alzheimer's disease?". Smart Search will query the Posters.science database to generate an answer and list the most relevant posters.
 
 ### Example Queries
 
@@ -13,41 +17,33 @@ Upon clicking on the "Smart Search" button, users will be taken to the Smart Sea
 - _"Find posters about climate change from European conferences"_
 - _"What are the latest findings in cancer immunotherapy?"_
 
-## Technical Implementation
+## Planned Technical Approach
 
 ### Infrastructure
 
 - **Local GPU Compute**: On-premises LLM processing
-- **Retrieval-Augmented Generation (RAG)**: Context-aware responses
-- **Vector Database**: Semantic similarity search
-- **Knowledge Base**: Domain-specific information
+- **Retrieval-Augmented Generation (RAG)**: Context-aware responses grounded in poster content
+- **pgvector + HNSW indexing**: Vector similarity search within PostgreSQL
+- **Meilisearch integration**: Hybrid keyword + vector retrieval
 
-### LLM Processing Pipeline
+### Processing Pipeline
 
 1. **Query Analysis**: Intent and entity extraction
-2. **Context Retrieval**: Relevant poster content gathering
+2. **Context Retrieval**: Relevant poster content gathering via vector similarity
 3. **Prompt Construction**: Context-aware prompt generation
-4. **LLM Inference**: Model processing and response generation
-5. **Response Validation**: Quality and accuracy checking
-6. **Result Formatting**: User-friendly response presentation
+4. **LLM Inference**: Response generation grounded in retrieved posters
+5. **Result Formatting**: User-friendly response with source citations
 
-## AI Capabilities
-
-### Content Understanding
-
-- **Semantic Analysis**: Deep content comprehension
-- **Topic Classification**: Automatic subject categorization
+## Planned Capabilities
 
 ### Query Processing
 
-- **Intent Classification**: User goal identification
-- **Entity Recognition**: Key concept extraction
-- **Query Expansion**: Related term inclusion
-- **Contextual Understanding**: Conversation flow maintenance
+- **Entity Recognition**: Conference names, years, research topics
+- **Query Expansion**: Related term and synonym inclusion
+- **Semantic Search**: Meaning-based matching beyond keyword overlap
 
 ### Response Generation
 
-- **Summarization**: Concise content summaries
-- **Explanation**: Research context and significance
+- **Summarization**: Concise content summaries across relevant posters
+- **Citation**: Source attribution linking back to specific posters
 - **Recommendations**: Related poster suggestions
-- **Citation**: Proper source attribution
